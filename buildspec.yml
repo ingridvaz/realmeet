@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto8
+      java: corretto11
   build:
     commands:
       - echo Build started on `date`
@@ -12,9 +12,6 @@ artifacts:
   files:
     #- service/target/*.jar
     - service-0.0.1-SNAPSHOT.jar
-
-  discard-paths: yes
-
 cache:
   paths:
     - '/root/.m2/**/*'
