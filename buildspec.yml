@@ -11,7 +11,7 @@ phases:
 artifacts:
   files:
     #- service/target/*.jar
-    - '/Users/ingridmartins/Documents/backend/realmeet/service/target/service-0.0.1-SNAPSHOT.jar'
+    - service/target/service-0.0.1-SNAPSHOT.jar
 
   discard-paths: yes
 
