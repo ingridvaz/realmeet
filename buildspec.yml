@@ -13,7 +13,7 @@ phases:
       - mvn install package
 artifacts:
   files:
-    - target/*.jar
+    - '**/*'
 cache:
   paths:
     - '/root/.m2/**/*'
