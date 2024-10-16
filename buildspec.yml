@@ -3,7 +3,7 @@ version: 0.2
 phase:
   install:
     runtime-versions:
-      java: corretto17
+      java: corretto8
       docker: 19
   build:
     commands:
@@ -16,4 +16,5 @@ artifacts:
 
 cache:
   paths:
+    - '/root/.m2/**/*'
 
