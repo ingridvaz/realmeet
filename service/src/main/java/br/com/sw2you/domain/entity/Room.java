@@ -1,12 +1,26 @@
 package br.com.sw2you.domain.entity;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
+import static java.util.Objects.isNull;
+
+@Entity
+@Table(name = "room")
 public class Room {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "seat", nullable = false)
     private Integer seat;
+
+    @Column(name = "active", nullable = false)
     private Boolean active;
 
     public Room() {
@@ -17,6 +31,13 @@ public class Room {
         this.name = name;
         this.seat = seat;
         this.active = active;
+    }
+
+    @PrePersist
+    public void prePersist(){
+        if(isNull(active)){
+            active = true;
+        }
     }
 
     public Long getId() {
